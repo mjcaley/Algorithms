@@ -16,6 +16,7 @@
 		27DD28171D3810E000457EC3 /* huge_fib_mod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DD280B1D380F1E00457EC3 /* huge_fib_mod.cpp */; };
 		27DD28211D3E878200457EC3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DD28201D3E878200457EC3 /* main.cpp */; };
 		27DD282C1D3E8B0300457EC3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DD282B1D3E8B0300457EC3 /* main.cpp */; };
+		27E650731D412FA7000BD56C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27E650721D412FA7000BD56C /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +101,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		27E6506E1D412FA7000BD56C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +133,8 @@
 		27DD28201D3E878200457EC3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		27DD28291D3E8B0300457EC3 /* FractionalKnapsack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FractionalKnapsack; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DD282B1D3E8B0300457EC3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		27E650701D412FA7000BD56C /* DifferentSummands */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DifferentSummands; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E650721D412FA7000BD56C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +201,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27E6506D1D412FA7000BD56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -233,6 +252,7 @@
 				27DD28291D3E8B0300457EC3 /* FractionalKnapsack */,
 				273CE4401D3FB71D009FB3A2 /* MinimumDotProduct */,
 				2754D92A1D3FC2EC008A924E /* CoveringSegmentsByPoints */,
+				27E650701D412FA7000BD56C /* DifferentSummands */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +294,7 @@
 		27DD28191D3E877100457EC3 /* Week 3 */ = {
 			isa = PBXGroup;
 			children = (
+				27E650711D412FA7000BD56C /* DifferentSummands */,
 				2754D92B1D3FC2EC008A924E /* CoveringSegmentsByPoints */,
 				273CE4411D3FB71D009FB3A2 /* MinimumDotProduct */,
 				27DD282A1D3E8B0300457EC3 /* FractionalKnapsack */,
@@ -296,6 +317,14 @@
 				27DD282B1D3E8B0300457EC3 /* main.cpp */,
 			);
 			path = FractionalKnapsack;
+			sourceTree = "<group>";
+		};
+		27E650711D412FA7000BD56C /* DifferentSummands */ = {
+			isa = PBXGroup;
+			children = (
+				27E650721D412FA7000BD56C /* main.cpp */,
+			);
+			path = DifferentSummands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +483,23 @@
 			productReference = 27DD28291D3E8B0300457EC3 /* FractionalKnapsack */;
 			productType = "com.apple.product-type.tool";
 		};
+		27E6506F1D412FA7000BD56C /* DifferentSummands */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27E650741D412FA7000BD56C /* Build configuration list for PBXNativeTarget "DifferentSummands" */;
+			buildPhases = (
+				27E6506C1D412FA7000BD56C /* Sources */,
+				27E6506D1D412FA7000BD56C /* Frameworks */,
+				27E6506E1D412FA7000BD56C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DifferentSummands;
+			productName = DifferentSummands;
+			productReference = 27E650701D412FA7000BD56C /* DifferentSummands */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -490,6 +536,9 @@
 					27DD28281D3E8B0300457EC3 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					27E6506F1D412FA7000BD56C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 27DD27C81D356F5A00457EC3 /* Build configuration list for PBXProject "Algorithms" */;
@@ -513,6 +562,7 @@
 				27DD28281D3E8B0300457EC3 /* FractionalKnapsack */,
 				273CE43F1D3FB71D009FB3A2 /* MinimumDotProduct */,
 				2754D9291D3FC2EC008A924E /* CoveringSegmentsByPoints */,
+				27E6506F1D412FA7000BD56C /* DifferentSummands */,
 			);
 		};
 /* End PBXProject section */
@@ -587,6 +637,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27DD282C1D3E8B0300457EC3 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27E6506C1D412FA7000BD56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27E650731D412FA7000BD56C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +874,22 @@
 			};
 			name = Release;
 		};
+		27E650751D412FA7000BD56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27E650761D412FA7000BD56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -908,6 +982,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		27E650741D412FA7000BD56C /* Build configuration list for PBXNativeTarget "DifferentSummands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E650751D412FA7000BD56C /* Debug */,
+				27E650761D412FA7000BD56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
