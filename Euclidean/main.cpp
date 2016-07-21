@@ -1,30 +1,30 @@
 #include <iostream>
 
 
-int euclidean(int a, int b)
+long long greatest_common_divisor(long long a, long long b)
 {
-    int quotient = a / b;
-    int remainder = a - b * quotient;
+    long long quotient = a / b;
+    long long remainder = a - b * quotient;
     if (remainder == 0)
     {
         return b;
     }
     else
     {
-        return euclidean(b, remainder);
+        return greatest_common_divisor(b, remainder);
     }
 }
 
 
 int main()
 {
-    int a, b;
+    long long a, b;
     std::cin >> a;
     std::cin >> b;
     
-    auto r = euclidean(a, b);
+    auto r = greatest_common_divisor(a, b);
     
-    std::cout << r << std::endl;
+    std::cout << (a * b) / r << std::endl;
     
     return 0;
 }
