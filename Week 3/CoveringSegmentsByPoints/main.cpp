@@ -10,6 +10,7 @@ using std::vector;
 struct Segment {
     int start, end;
     
+    Segment() : start(0), end(0) {};
     Segment(int start, int end) : start(start), end(end) {}
     
     int length() const
@@ -77,70 +78,50 @@ struct Segment {
     }
 };
 
-vector<int> gen_range(const Segment& s)
+Segment overlap(const Segment& left_most, const Segment& right_most)
 {
-    vector<int> range;
-    for (int i = s.start; i <= s.end; ++i)
+    Segment overlapping_points;
+    
+    if (right_most.start <= left_most.end)
     {
-        range.emplace_back(i);
+        // Lines intersect
+        overlapping_points.start = std::max( left_most.start, right_most.start );
+        overlapping_points.end = std::min( left_most.end, right_most.end );
     }
-    return range;
-}
-
-vector<int> diff(const vector<int>& left, const vector<int>& right)
-{
-    vector<int> intersection;
-    std::set_intersection(left.begin(),
-                          left.end(),
-                          right.begin(),
-                          right.end(),
-                          std::back_inserter(intersection));
-    return intersection;
+    
+    return overlapping_points;
 }
 
 vector<int> optimal_points(const vector<Segment>& segments) {
     vector<int> points;
-    vector<int> common_points;
     
-    // Prime common points with first element
-    common_points = diff(gen_range(segments.front()),
-                         gen_range(segments.front()) );
+    // Prime the segment
+    Segment common_segment = segments.front();
     
     for (auto iter = segments.begin()+1; iter != segments.end(); ++iter)
     {
         auto& segment = *iter;
         
-        auto new_segment_range = gen_range(segment);
-        auto point_diff = diff(common_points, new_segment_range);
-        if (point_diff.empty())
+        auto overlapping_points = overlap( common_segment, segment );
+        
+        if (overlapping_points == Segment(0,0))
         {
-            // Commit points
-            points.emplace_back(common_points.back());
-            common_points = new_segment_range;
+            // Doesn't overlap, commit points
+            points.emplace_back(common_segment.end);
+            common_segment = segment;
         }
         else
         {
-            // Continue to next segment
-            common_points = point_diff;
+            common_segment = overlapping_points;
         }
     }
     
-    // Commit last point if there is one
-    if (!common_points.empty())
+    if (common_segment != Segment(0, 0) )
     {
-        points.emplace_back(common_points.back());
+        points.emplace_back(common_segment.end);
     }
     
     return points;
-}
-
-void print_segments(const vector<Segment>& segments)
-{
-    std::cout << '\n';
-    for (auto& s : segments)
-    {
-        std::cout << s.start << ' ' << s.end << std::endl;
-    }
 }
 
 int main() {
