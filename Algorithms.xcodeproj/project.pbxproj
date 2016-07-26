@@ -24,12 +24,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		272745F51D47BB1900B52F88 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		273CE43E1D3FB71D009FB3A2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -1056,6 +1056,7 @@
 				272745FC1D47BB1900B52F88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		273CE4461D3FB71D009FB3A2 /* Build configuration list for PBXNativeTarget "MinimumDotProduct" */ = {
 			isa = XCConfigurationList;

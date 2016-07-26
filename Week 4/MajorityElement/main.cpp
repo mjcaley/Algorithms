@@ -7,35 +7,6 @@
 using std::vector;
 
 
-//int test_majority(const vector<int> a)
-//{
-//    //std::unordered_map<int, int> count;
-//    vector<int> count(1000000000);
-//    for (auto i : a)
-//    {
-//        count[i] += 1;
-//    }
-//    
-//    int largest { -1 };
-//    for (int i { 0 }; i < count.size(); ++i)
-//    {
-//        if ( count[i] > count[largest])
-//        {
-//            largest = i;
-//        }
-//    }
-//    
-//    if (count[largest] > (a.size()/2))
-//    {
-//        return largest;
-//    }
-//    else
-//    {
-//        return -1;
-//    }
-//}
-
-
 vector<int> merge(vector<int>& bottom, vector<int>& top)
 {
     vector<int> sorted;
@@ -93,6 +64,7 @@ int get_majority_element(vector<int> &a, int left, int right) {
     
     --right;
     auto sorted = sort(a, left, right);
+    float half = sorted.size() / static_cast<float>(2);
     auto midpoint = sorted.size() / 2;
     auto elem_at_midpoint = sorted[midpoint];
     
@@ -112,7 +84,7 @@ int get_majority_element(vector<int> &a, int left, int right) {
     int last { static_cast<int>(sorted.size()-1) };
     while (true)
     {
-        if (sorted[first] == elem_at_midpoint)
+        if (sorted[last] == elem_at_midpoint)
         {
             break;
         }
@@ -121,8 +93,9 @@ int get_majority_element(vector<int> &a, int left, int right) {
             --last;
         }
     }
+    ++last;
     
-    if ( (last - first) > midpoint )
+    if ( (last - first) > half )
     {
         // more than half are the same value
         return 1;
@@ -131,15 +104,17 @@ int get_majority_element(vector<int> &a, int left, int right) {
     {
         return -1;
     }
+    
 }
 
 int main() {
     int n;
     std::cin >> n;
-    vector<int> a(n);
-    for (size_t i = 0; i < a.size(); ++i) {
-        std::cin >> a[i];
+    vector<int> a;
+    for (size_t i = 0; i < n; ++i) {
+        int input;
+        std::cin >> input;
+        a.emplace_back(input);
     }
     std::cout << (get_majority_element(a, 0, a.size()) != -1) << '\n';
-    //std::cout << "\nSafe " << test_majority(a) << std::endl;
 }
