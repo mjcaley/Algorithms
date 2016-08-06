@@ -1387,6 +1387,7 @@
 				27537FB51D521F3400D21A71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2754D9301D3FC2EC008A924E /* Build configuration list for PBXNativeTarget "CoveringSegmentsByPoints" */ = {
 			isa = XCConfigurationList;
